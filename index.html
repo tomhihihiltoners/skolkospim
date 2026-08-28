@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Команда | Проекты</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: "#E0E0E0",
+            accent: "#8C3B3B"
+          },
+          fontFamily: {
+            sans: ["Inter", "Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .carousel-track {
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-card {
+      scroll-snap-align: start;
+    }
+  </style>
+</head>
+<body class="bg-paper text-black antialiased">
+  <main class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-5 py-5 sm:px-8 sm:py-8 lg:px-12">
+    <header class="mb-5 flex items-center justify-between border-b-2 border-black pb-4 text-xs font-bold uppercase sm:text-sm">
+      <a href="#" class="leading-none transition-colors hover:text-accent">Команда</a>
+      <nav class="flex items-center gap-5 sm:gap-8">
+        <a href="#about" class="transition-colors hover:text-accent">О нас</a>
+        <a href="#projects" class="transition-colors hover:text-accent">Проекты</a>
+        <a href="#" aria-label="VK" class="grid size-8 place-items-center border-2 border-black text-[10px] font-black transition-colors hover:bg-accent hover:text-white">
+          VK
+        </a>
+      </nav>
+    </header>
+
+    <section class="border-2 border-black bg-accent">
+      <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: hero/team photo banner -->
+      <img
+        src="https://placehold.co/1200x600/8C3B3B/FFFFFF?text=TEAM+PHOTO"
+        alt="Общее фото команды"
+        class="block aspect-[2/1] w-full object-cover"
+      />
+    </section>
+
+    <section id="about" class="grid gap-8 border-b-2 border-black py-12 sm:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+      <h2 class="text-5xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">КТО МЫ?</h2>
+      <p class="max-w-3xl text-lg font-medium leading-relaxed sm:text-xl">
+        Мы команда единомышленников, которая объединяет идеи, дизайн и технологические решения.
+        Работаем точно, открыто и внимательно к деталям: от первых набросков до готовых проектов,
+        которыми удобно пользоваться и приятно делиться.
+      </p>
+    </section>
+
+    <section id="projects" class="py-12 sm:py-16">
+      <div class="mb-8 flex items-end justify-between gap-6 border-b-2 border-black pb-5">
+        <h2 class="text-5xl font-black uppercase leading-none sm:text-7xl lg:text-8xl">НАШИ ПРОЕКТЫ</h2>
+        <span class="hidden text-sm font-bold uppercase sm:block">Медиа</span>
+      </div>
+
+      <section data-carousel class="border-b-2 border-black pb-10">
+        <div class="mb-6 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <h3 class="text-3xl font-black uppercase leading-none sm:text-5xl">ПОДКАСТЫ</h3>
+          <div class="flex items-center gap-3">
+            <button type="button" data-carousel-prev aria-label="Предыдущий выпуск" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-left" class="size-5"></i>
+            </button>
+            <button type="button" data-carousel-next aria-label="Следующий выпуск" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-right" class="size-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div data-carousel-track class="carousel-track -mx-5 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: podcast episode thumbnail -->
+            <img
+              src="https://file.garden/acePswnzhB1MhjFX/Screenshot_27.png"
+              alt="Антон Маслов"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Выпуск 01</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Антон Маслов / Режиссёр</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Разговор о городских сообществах, локальных проектах и том, как идеи становятся привычками.
+              </p>
+              <a href="https://vkvideo.ru/video-228703273_456239280" target="_blank" rel="noopener" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <span class="grid size-5 place-items-center border-2 border-current text-[9px] leading-none">VK</span>
+                <i data-lucide="external-link" class="size-4"></i>
+                Смотреть в VK
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: podcast episode thumbnail -->
+            <img
+              src="https://placehold.co/600x400/222222/FFFFFF?text=Podcast+02"
+              alt="Превью выпуска подкаста с Ильей Соколовым"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Выпуск 02</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Илья Соколов / Дизайн процесса</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Обсуждаем, как держать ясный ритм работы, не теряя человеческий голос и качество деталей.
+              </p>
+              <a href="https://vk.com/video" target="_blank" rel="noopener" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <span class="grid size-5 place-items-center border-2 border-current text-[9px] leading-none">VK</span>
+                <i data-lucide="external-link" class="size-4"></i>
+                Смотреть в VK
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: podcast episode thumbnail -->
+            <img
+              src="https://placehold.co/600x400/8C3B3B/FFFFFF?text=Podcast+03"
+              alt="Превью выпуска подкаста с Марией Беловой"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Выпуск 03</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Мария Белова / Медиа без шума</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Говорим о визуальных системах, честной коммуникации и проектах, которые легко считываются.
+              </p>
+              <a href="https://vk.com/video" target="_blank" rel="noopener" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <span class="grid size-5 place-items-center border-2 border-current text-[9px] leading-none">VK</span>
+                <i data-lucide="external-link" class="size-4"></i>
+                Смотреть в VK
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: podcast episode thumbnail -->
+            <img
+              src="https://placehold.co/600x400/222222/FFFFFF?text=Podcast+04"
+              alt="Превью выпуска подкаста с Денисом Кимом"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Выпуск 04</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Денис Ким / Командный язык</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Выпуск о том, как команды договариваются, принимают решения и сохраняют общий фокус.
+              </p>
+              <a href="https://vk.com/video" target="_blank" rel="noopener" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <span class="grid size-5 place-items-center border-2 border-current text-[9px] leading-none">VK</span>
+                <i data-lucide="external-link" class="size-4"></i>
+                Смотреть в VK
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div data-carousel-dots class="mt-6 flex gap-3" aria-label="Навигация по выпускам"></div>
+      </section>
+
+      <section data-carousel class="border-b-2 border-black py-10">
+        <div class="mb-6 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <h3 class="text-3xl font-black uppercase leading-none sm:text-5xl">РЕПОРТАЖНЫЕ СЪЕМКИ</h3>
+          <div class="flex items-center gap-3">
+            <button type="button" data-carousel-prev aria-label="Предыдущая съемка" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-left" class="size-5"></i>
+            </button>
+            <button type="button" data-carousel-next aria-label="Следующая съемка" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-right" class="size-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div data-carousel-track class="carousel-track -mx-5 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: reportage event thumbnail -->
+            <img
+              src="https://placehold.co/600x400/222222/FFFFFF?text=Reportage+01"
+              alt="Репортажная съемка открытой мастерской в Доме печати"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Екатеринбург</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Открытая мастерская / Дом печати</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Репортаж о живой работе участников, деталях пространства и ключевых моментах встречи.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="image" class="size-4"></i>
+                Смотреть фото
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: reportage event thumbnail -->
+            <img
+              src="https://placehold.co/600x400/8C3B3B/FFFFFF?text=Reportage+02"
+              alt="Репортажная съемка городского форума в Перми"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Пермь</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Городской форум / Главная сцена</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Съемка выступлений, общения гостей и атмосферы события в строгой документальной подаче.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="camera" class="size-4"></i>
+                Смотреть репортаж
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: reportage event thumbnail -->
+            <img
+              src="https://placehold.co/600x400/222222/FFFFFF?text=Reportage+03"
+              alt="Репортажная съемка лекции и дискуссии в Тюмени"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Тюмень</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Лекция и дискуссия / Камерный зал</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Фотосерия о диалоге, внимании аудитории и спокойной архитектуре образовательного события.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="image" class="size-4"></i>
+                Смотреть фото
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div data-carousel-dots class="mt-6 flex gap-3" aria-label="Навигация по съемкам"></div>
+      </section>
+
+      <!-- Template carousel: rename the heading, update cards, or clone this whole section for a new category. -->
+      <section data-carousel class="border-b-2 border-black py-10">
+        <div class="mb-6 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <h3 class="text-3xl font-black uppercase leading-none sm:text-5xl">ДОПОЛНИТЕЛЬНЫЕ ПРОЕКТЫ</h3>
+          <div class="flex items-center gap-3">
+            <button type="button" data-carousel-prev aria-label="Предыдущий проект" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-left" class="size-5"></i>
+            </button>
+            <button type="button" data-carousel-next aria-label="Следующий проект" class="grid size-11 place-items-center border-2 border-black transition-colors hover:bg-black hover:text-white">
+              <i data-lucide="arrow-right" class="size-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div data-carousel-track class="carousel-track -mx-5 flex gap-5 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0">
+          <!-- Card template: replace thumbnail text, title, description, and href with real project content. -->
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: additional project thumbnail -->
+            <img
+              src="https://placehold.co/600x400/8C3B3B/FFFFFF?text=Project+Image"
+              alt="Превью дополнительного проекта"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Категория</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Название проекта / Локация</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Короткое описание проекта: задача, формат, результат или основная идея материала.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="external-link" class="size-4"></i>
+                Открыть проект
+              </a>
+            </div>
+          </article>
+
+          <!-- Duplicate this article to add another slide. -->
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: additional project thumbnail -->
+            <img
+              src="https://placehold.co/600x400/222222/FFFFFF?text=Project+Preview"
+              alt="Превью рабочего проекта"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Формат</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Рабочее название / Серия 01</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Добавьте здесь лаконичный текст, который объясняет ценность проекта без лишнего шума.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="arrow-up-right" class="size-4"></i>
+                Подробнее
+              </a>
+            </div>
+          </article>
+
+          <article class="carousel-card flex w-[86vw] shrink-0 flex-col border-2 border-black bg-paper sm:w-[48%] lg:w-[31.5%]">
+            <!-- REPLACE SRC WITH YOUR REAL IMAGE URL HERE: additional project thumbnail -->
+            <img
+              src="https://placehold.co/600x400/8C3B3B/FFFFFF?text=Future+Project"
+              alt="Превью будущего проекта"
+              class="block aspect-[4/3] w-full object-cover"
+            />
+            <div class="flex min-h-64 flex-col p-5">
+              <p class="text-xs font-black uppercase">Направление</p>
+              <h4 class="mt-3 text-2xl font-black uppercase leading-tight">Будущий проект / Черновик</h4>
+              <p class="mt-4 flex-1 text-base font-medium leading-relaxed">
+                Замените этот текст на описание, добавьте ссылку и при необходимости загрузите реальное фото.
+              </p>
+              <a href="#" class="mt-6 inline-flex w-fit items-center gap-2 border-2 border-black px-4 py-3 text-sm font-black uppercase transition-colors hover:bg-accent hover:text-white">
+                <i data-lucide="external-link" class="size-4"></i>
+                Открыть проект
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div data-carousel-dots class="mt-6 flex gap-3" aria-label="Навигация по дополнительным проектам"></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    function initCarousel(carousel) {
+      const track = carousel.querySelector("[data-carousel-track]");
+      const cards = Array.from(carousel.querySelectorAll(".carousel-card"));
+      const prevButton = carousel.querySelector("[data-carousel-prev]");
+      const nextButton = carousel.querySelector("[data-carousel-next]");
+      const dotsContainer = carousel.querySelector("[data-carousel-dots]");
+      let activeIndex = 0;
+      let scrollFrame = null;
+
+      if (!track || !cards.length || !prevButton || !nextButton || !dotsContainer) return;
+
+      function getCardStep() {
+        const styles = window.getComputedStyle(track);
+        return cards[0].offsetWidth + parseFloat(styles.columnGap || styles.gap || 0);
+      }
+
+      function clampIndex(index) {
+        return Math.max(0, Math.min(index, cards.length - 1));
+      }
+
+      function setActiveDot(index) {
+        Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+          dot.classList.toggle("bg-black", dotIndex === index);
+          dot.classList.toggle("bg-transparent", dotIndex !== index);
+          dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+        });
+      }
+
+      function goToCard(index, behavior = "smooth") {
+        activeIndex = clampIndex(index);
+        track.scrollTo({
+          left: getCardStep() * activeIndex,
+          behavior
+        });
+        setActiveDot(activeIndex);
+      }
+
+      cards.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Перейти к слайду ${index + 1}`);
+        dot.className = "size-3 border-2 border-black bg-transparent transition-colors";
+        dot.addEventListener("click", () => goToCard(index));
+        dotsContainer.appendChild(dot);
+      });
+
+      prevButton.addEventListener("click", () => goToCard(activeIndex - 1));
+      nextButton.addEventListener("click", () => goToCard(activeIndex + 1));
+
+      track.addEventListener("scroll", () => {
+        if (scrollFrame) window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(() => {
+          const nextIndex = clampIndex(Math.round(track.scrollLeft / getCardStep()));
+          if (nextIndex !== activeIndex) {
+            activeIndex = nextIndex;
+            setActiveDot(activeIndex);
+          }
+        });
+      });
+
+      window.addEventListener("resize", () => goToCard(activeIndex, "auto"));
+      setActiveDot(activeIndex);
+    }
+
+    document.querySelectorAll("[data-carousel]").forEach(initCarousel);
+    lucide.createIcons();
+  </script>
+</body>
+</html>
